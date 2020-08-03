@@ -1,0 +1,415 @@
+\documentclass[letterpaper,10pt,onecolumn]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\usepackage{enumitem}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{calligra}
+\usepackage{url}
+%\usepackage{algpseudocode} 
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+\lstloadlanguages{[5.2]Mathematica}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textwidth}{490pt}
+\setlength{\topmargin}{-40pt}
+\addtolength{\hoffset}{-0.3cm}
+\addtolength{\textheight}{4cm}
+
+\begin{document}
+\begin{center}
+
+\includegraphics[width=490pt]{header.png}\\[0.5cm]
+
+\textsc{\LARGE M\'etodos Computacionales 1}\\[0.1cm]
+%\large Nombre Profesora \\[0.5cm]
+
+\end{center}
+
+\large \noindent\textsc{Nombre del curso:}  M\'etodos Computacionales 1 % aqui %nombre del curso 
+  
+\noindent\textsc{C\'odigo del curso:}  FISI-2026 %Aqui el codigo del %curso 
+
+\noindent\textsc{Unidad acad\'emica:} Departamento de F\'isica
+
+\noindent\textsc{Prerrequisitos}: Introducci\'on a la Programaci\'on (ISIS-1221). \'Algebra Lineal I (MATE-1105).
+
+\noindent\textsc{Cr\'editos}: 3
+
+\noindent\textsc{Periodo acad\'emico:} %Aqui el periodo, %p.ej. 201510 
+
+\noindent\textsc{Horario:}
+%Aqui el horario, %p.ej. Ma y Ju, 10:00 a 11:20 
+
+\noindent\rule{\textwidth}{1pt}\\[-0.3cm]
+
+\normalsize \noindent\textsc{Nombre profesor magistral:}
+%Aqui nombre del profesor principal   
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:nn@uniandes.edu.co}{\nolinkurl{nn@uniandes.edu.co}}
+%Cambie address por su direccion de correo uniandes 
+
+\noindent\textsc{Horario y lugar de atenci\'on:} 
+% horario de atencion
+\\[-0.1cm]
+
+
+
+
+\normalsize \noindent\textsc{Nombre profesor Complementaria:}
+%Aqui nombre del profesor principal 
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:nn@uniandes.edu.co}{\nolinkurl{nn@uniandes.edu.co}}
+%Cambie address por su direccion de correo uniandes 
+
+\noindent\textsc{Horario de atenci\'on:} con cita previa. 
+\\[-0.1cm]
+%\href{mailto: jd.prada1760@uniandes.edu.co}{\nolinkurl{jd.prada1760@uniandes.edu.co}}
+
+%Cambie address por direccion de correo uniandes del profesor
+%complementario 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del profesor complementario, p.ej. Vi, 15:00 a
+%17:00, Oficina Ip102 
+%\\[-0.1cm]
+%Repetir esto en caso de varios profesores complementarios
+
+%\noindent\textsc{Nombre monitor(a):} %Aqui nombre del monitor si aplica
+
+%\noindent\textsc{Correo electr\'onico:}
+%\href{mailto:address@uniandes.edu.co}{\nolinkurl{address@uniandes.edu.co}}
+%%Cambie address por direccion de correo uniandes del monitor 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del monitor, p.ej. Vi, 15:00 a 17:00, Oficina Ip102 
+
+\noindent\rule{\textwidth}{1pt}\\[-0.1cm]
+
+\newcounter{mysection}
+\addtocounter{mysection}{1}
+
+\noindent\textbf{\large \Roman{mysection} \quad Introducci\'on}\\[-0.2cm]
+
+%Este espacio es para hacer una introduccion al curso, evidenciando la
+%propuesta metodologica. Debe ser clara y precisa. 
+
+\noindent\normalsize Los m\'etodos computacionales son un aspecto
+inseparable de cualquier \'area de trabajo en ciencia e ingenier\'ia.
+Esto se debe a la facilidad de acceso a 
+computadoras programables  y al aumento exponencial en su capacidad de
+procesamiento.
+Esta diversificaci\'on de recursos para el c\'omputo s\'olo se puede aprovechar si 
+los  cient\'{\i}ficos son capaces de utilizar la tecnolog\'{\i}a
+de manera eficiente.
+Adem\'as, la obtenci\'on de resultados cient\'ificos 
+reproducibles requiere una comprensi\'on b\'asica de probabilidad y estad\'istica.
+\\[0.1cm] 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Objetivos}\\[-0.2cm]
+
+%En este espacio se debe precisar el ente visor del curso y el
+%proposito ideal al finalizar el curso. 
+\noindent\normalsize El objetivo principal del curso es presentar
+algoritmos y t\'ecnicas computacionales b\'asicas para:
+
+\begin{itemize}
+\item analizar y describir datos con m\'etodos estad\'isticos basadas
+  en m\'etodos Monte Carlo. \\[-0.6cm]
+\item resolver num\'ericamente problemas que involucren derivadas, integrales, sistemas de ecuaciones algebraicas, \\[-0.6cm]
+\item desarrollar esquemas reproducibles para el an\'alisis de datos cient\'ificos. \\[-0.6cm]
+\end{itemize} 
+\vspace*{0.5cm} 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Competencias a
+  desarrollar}\\[-0.2cm] 
+
+%En este espacio se describen las habilidades que el estudiante desarrollara en el transcurso del curso.
+
+\noindent\normalsize Al finalizar el curso, se espera que el
+estudiante adquiera las siguientes habilidades.
+
+\begin{itemize}
+\item Realizar an\'aisis de datos usando apropiadamente conceptos b\'asicos de probabilidad y estad\'istica en la soluci\'on de problemas en ciencias y otras \'areas: variables aleatorias, valores esperados, funciones binomiales y multinomiales, m\'etodos de Monte-Carlo, pruebas de hip\'otesis:
+ \begin{itemize}
+  \item Diferenciar distribuciones de probabilidad comunmente encontradas en ciencias: normal, poisson, log-normal, etc.
+  \item Hacer histogramas para identificar la distribuci\'on de los datos como funci\'on de una variable espec\'fica.
+  \item Estimar la moda, media, mediana, desviaci\'on estandar, curtosis y otros momentos de series de datos.
+  \item Realizar pruebas cuantitativas para ver si dos series de datos corresponden a la misma distribuci\'on de probabilidad.
+  \item Utilizar datos para proponer modelos param\'etricos y acotar los terminos libres de este. 
+  \item Solucionar sistemas de ecuaciones algebraicas lineales. 
+  \item Resolver problemas de m\'inicos cuadrados, planteados desde el sistema de ecuaciones lineales correspondiente.
+  \item Realizar reducci\'on de dimensionalidad de datos a trav\'es del m\'etodo de componentes principales.
+ \end{itemize}
+\\[-0.6cm]   
+\item Usar herranientas de Python para an\'alisis estad\'istico de datos, para la soluci\'on de problemas en ciencias y otras \'areas.\\[-0.6cm]
+\begin{itemize}
+   \item Implementar computacionalment modelos f\'isico--mat\'ematicos para el an\'alisis de datos utilizando \texttt{clases} y \texttt{funciones}.\\[-0.5cm]
+   \item  Adoptar buenas pr\'acticas de escritura de c\'odigo para el desarrollo cont\'inuo de aplicaciones en ambientes colaborativos (comentarios, control de versiones, documentaci\'on).\\[-0.5cm]
+    \item Utilizar de la biblioteca \texttt{pandas} para el manejo eficiente de los datos
+    teniendo en cuenta los siguientes procedimientos: preprocesamiento, re--formato de
+    columnas y normalizaci\'on.\\[-0.5cm]
+   \item Utilizar la biblioteca \texttt{numpy} en la implementaci\'on de los algoritmos matem\'aticos que representen los diferentes sistemas en estudio.\\[-0.5cm]
+    \item  Utilizar la biblioteca \texttt{matplotlib} para visualizar datos.\\[-0.5cm]
+\end{itemize}\\[-0.7cm]
+\item Solucionar numéricamente problemas sencillos de cálculo diferencial, cálculo integral y álgebra lineal: cálculo de integrales, cálculo de derivadas sistemas de ecuaciones lineales, integraci\'on de funciones, problemas de valores propios. \\[-0.6cm]  
+
+\begin{itemize}
+    \item Calcula num\'ericamente la primera y segunda derivada de funciones de una variable.
+    \item Calcula num\'ericamente integrales unidimensionales definidas e indefinidas con los m\'etodos siguientes: trapecio, newton-rhapson y cuadratura gaussiana.
+    \item Encuentra num\'ericamente la soluci\'on a sistemas de ecuaciones algebraicos lineales.
+    \item Utiliza bibliotecas de \'algebra lineal para calcular valores y vectores propios.
+    \item Interpreta los vectores y valores propios de una matriz de covarianza como herramientas para la reducci\'on de dimensionalidad de un conjunto de datos.
+\end{itemize}
+\end{itemize}
+%de manera aut\'onoma la soluci\'on num\'erica a una variedad de fen\'omenos representados mediante ecuaciones diferenciales o distribuciones probabil\'{\i}sticas.
+
+\vspace*{0.5cm} 
+
+\newpage
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Contenido por
+  semanas}\\[-0.2cm]  
+
+%Se expone de forma ordenada toda la tematica a tratar del curso. Debe planearse para 15 semanas.
+
+\noindent\textbf{\textsc{Semana 1}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: 
+Presentaci\'on del curso. Uso de Python en la nube. Comandos b\'asicos Unix. 
+Repaso de la sintaxis b\'asica de Python. \\[-0.6cm] 
+%\item Lecturas preparatorias: 
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 2}} \\[-0.5cm]
+\begin{itemize}
+\item Temas: 
+Repaso de lectura de archivos, graficas, funciones y objetos en Python \\[-0.6cm] 
+%\item Lecturas preparatorias: 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 3}}\\[-0.5cm]
+\begin{itemize}
+\item Temas:  Introducci\'on a la probabilidad I: Conceptos fundamentales, interpretaci\'on de probabilidad, funciones de densidad. \\[-0.6cm]
+%\item Lecturas preparatorias: \\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 4}}\\[-0.5cm]
+\begin{itemize}
+\item Temas:  Introducci\'on a la probabilidad II: funciones de variables aleatorias, valores esperados, propagaci\'on de errores, transformaci\'on ortogonal de variables aleatorias. \\[-0.6cm]
+%\item Lecturas preparatorias: \\[-0.6cm]    
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 5}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Funciones de probabilidad: Funciones binomiales y multinomiales, distribuci\'on de Poisson, distribuci\'on uniforme. Distribuciones exponenciales, gaussianas, normales-logaritmicas, chi-cuadrado. \\[-0.6cm]
+%\item Lecturas preparatorias: \\[-0.6cm]
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 6}}\\[-0.5cm]
+\begin{itemize}
+\item Temas:  M\'etodos de montecarlo: N\'umeros distribu\'idos aleatoriamente, el m\'etodo de transformaci\'on, m\'etodo de selecci\'on-rechazo. Metr\'opolis-Hastings. \\[-0.6cm]
+%\item Lecturas preparatorias: \\[-0.6cm]  
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 7}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Pruebas estad\'isticas. Hip\'otesis, niveles de significancia. Ejemplo de construcci\'on de una prueba estad\'istica completa. Verificaci\'on de pruebas de ajuste. \\[-0.6cm]
+%\item Lecturas preparatorias:  \\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 8}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Conceptos b\'asicos sobre estimaci\'on de par\'ametros. Muestras, estimadores y sesgo estad\'istico. Estimadores para la media, varianza y covarianza de datos. \\[-0.6cm]
+%\item Lecturas preparatorias: \\[-0.6cm] 
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 9}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: An\'alisis con estimadores de m\'axima verosimilitud. Introducci\'on a estimadores de MV y ejemplos. Varianza de estimadores MV. MV Extendida, MV con datos segmentados. Combinaci\'on de mediciones con MV. \\[-0.6cm]
+%\item Lecturas preparatorias:
+\\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 10}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Conceptos b\'asicos de estad\'istica Bayesiana. Estimaci\'on de par\'ametros con estad\'istica bayesiana. \\[-0.6cm]  
+%\item Lecturas preparatorias:\\[-0.6cm]
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 11}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Integraci\'on. \\[-0.6cm]
+%\item Lecturas preparatorias: Cap\'itulo 6 (Integration) del libro de
+%Landau.\\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 12}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Derivadas. Ra\'ices de ecuaciones. \\[-0.6cm]
+%\item Lecturas preparatorias: Cap\'itulos 7.I (Numerical
+%  Differentiation) y 7.II (Trial-and-Error Searching) del libro de
+%  Landau.\\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 13}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Interpolación. \\[-0.6cm]
+%\item Lecturas: \\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 14}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Soluci\'on de sistemas de ecuaciones lineales. Ajustes
+  por m\'inimos cuadrados. \\[-0.6cm] 
+%\item Lecturas preparatorias:  Cap\'itulo 8 (Matrix Equation Solutions)
+%  del libro de Landau. \\[-0.6cm]
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 15}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Autovalores y autovectores. 
+An\'alisis de Componentes Principales. \\[-0.6cm]
+%\item Lecturas preparatorias: Secciones 6.3.1 (Principal Component
+%  Regression) y 10.2 (Principal Component Analysis) del libro ISL.\\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 16}}\\[-0.5cm]
+\begin{itemize}
+\item Temas. Campos Vectoriales. Derivadas parciales. Gradientes. Divergencia.\\[-0.6cm]  
+\end{itemize}
+
+
+%\vspace*{0.5cm} 
+%\stepcounter{mysection}
+%\noindent\textbf{\large \Roman{mysection} \quad
+  Metodolog\'ia}\\[-0.2cm] 
+
+%El curso es de 3 cr\'editos que corresponden a 9 horas de dedicaci\'on.
+%Habr\'a $5$ horas presenciales distribu\'idas en $2\times 1.5$ horas de magistral 
+%y $2$ horas de complementaria.
+%Las $4$ horas restantes corresponden a trabajo individual para la preparaci\'on de los contenidos de la semana. La propuesta busca implementar una estrategia de orientaci\'on guiada para el aprendizaje de las Ciencias Computacionales.
+
+%\begin{itemize}
+%    \item Antes de cada clase magistral al estudiante se le propone una lectura, un video
+%    explicativo de $15$ minutos y ejercicios para resolver. 
+%    El tiempo de estudio y no debe exceder el tiempo previsto para trabajo individual.
+%    \item Una secci\'on magistral, repartida en 2 sesiones semanales de 1.5 horas cada una.
+%    En cada clase se presentan los conceptos te\'oricos centrales para luego mostrar su
+%    implementaci\'on computacional.
+ %   \item Secciones complementarias (m\'aximo 15 estudiantes por profesor), correspondiente a
+ %   una \'unica sesi\'on de $2$ horas. El enfoque es pr\'actico, el \'enfasis esta en el
+ %   desarrollo de ejercicios por parte de los estudiantes. Los ejercicios de esta secci\'on
+%    deben ser dise\~nados por el profesor de la magistral para resolver un problema en cada
+%    secci\'on.
+%    El ejercicio debe tomar $1$ hora de an\'alisis y pr\'actica con desarrollo guiado por el
+%    monitor y $1$ hora de desarrollo individual de parte del estudiante para entrega 
+%    al final de la clase.
+%\end{itemize}
+%Se describen las tecnicas y metodos para el desarrollo exitoso del curso.
+
+%\noindent\normalsize 
+
+
+%\vspace*{0.5cm} 
+%\stepcounter{mysection}
+%\noindent\textbf{\large \Roman{mysection} \quad Criterios de
+%  evaluaci\'on}\\[-0.2cm] 
+
+%\begin{itemize}
+%    \item Ejercicios de programaci\'on y quices resueltos en la Magistral: $50\%$.  
+%    \item Ejercicios de programaci\'on y quices resueltos en el Laboratorio Complementario: $30\%$. 
+%    \item Examen Final (escrito y de programaci\'on): $20\%$.
+%\end{itemize}
+
+%Todos los ex\'amenes, talleres y ejercicios son
+%\textbf{individuales}.  
+%Si en las entregas se detecta que el trabajo no fue
+%individual (esto incluye colaboraci\'on con personas no inscritas en
+%el curso, i.e. a trav\'es de ``monitor\'ias'') se llevar\'a el caso a
+%comit\'e disciplinario y la nota del curso queda como Pendiente
+%Disciplinario hasta que el comit\'e tome alguna decisi\'on. 
+
+%Todas las entregas de talleres y ejercicios se har\'an a trav\'es de
+%SICUA.  {\bf No se aceptar\'a ninguna tarea por fuera de esa
+%  plataforma}, a menos que ocurra un una falla en los servidores de
+%SICUA que afecte a {\bf todos} los estudiantes del curso.
+
+
+%\vspace*{0.5cm} 
+%\stepcounter{mysection}
+%\noindent\textbf{\large \Roman{mysection} \quad Perfil de docente de M\'etodos computacionales}\\[-0.2cm] 
+
+%{\color{red} \textbf{FALTA DETERMINAR EL PERFIL DOCENTE}}
+
+\vspace*{0.5cm} 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad
+  Bibliograf\'ia}\\[-0.2cm] 
+
+%Indicar los libros y la documentacion guia.
+
+
+\noindent\normalsize Bibliograf\'ia principal:
+
+\begin{itemize}
+\item
+\textit{Software Carpentry: Python Testing}
+\url{http://katyhuff.github.io/python-testing/}
+
+\item
+\textit{A survey of Computational Physics - Enlarged Python Book}
+. R. H. Landau, M. J. P\'aez, C. C. Bordeianu. WILEY. 2012.
+\url{https://psrc.aapt.org/items/detail.cfm?ID=11578}
+
+\item
+\textit{Data Analysis: A Bayesian Tutorial.} D. S. Sivia,
+J. Skilling. Second Edition, Oxford Science Publications. 2006.
+
+\item 
+\textit{Statistical Mechanics: Algorithms and Computations.}
+W. Krauth, Oxford Univ. Press. 
+
+\item
+\textit{An Introduction to Statistical Learning.} G. James, D. Witten,
+T. Hastie, R. Tibshirani,
+Springer. \url{http://www-bcf.usc.edu/~gareth/ISL/} 
+
+
+\item Software Carpentry: \url{http://software-carpentry.org/}
+\item C++ Tutorial: \url{https://www.tutorialspoint.com/cplusplus/}
+\end{itemize}
+
+\noindent\normalsize Bibliograf\'ia secundaria:
+\begin{itemize}
+\item
+\textit{Elements of Scientific Computing}
+Tveito A., Langtangen H.P., Nielsen B.F., Cai X. Spinger. 2010.
+
+
+\item 
+\textit{Introduction to Computation and Programming Using Python},
+Guttag, J. V. The MIT Press. 2013.
+
+\end{itemize}
+
+
+\end{document}

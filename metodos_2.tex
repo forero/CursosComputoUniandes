@@ -1,0 +1,281 @@
+\documentclass[letterpaper,10pt,onecolumn]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\usepackage{enumitem}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{calligra}
+\usepackage{url}
+%\usepackage{algpseudocode} 
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+\lstloadlanguages{[5.2]Mathematica}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textwidth}{490pt}
+\setlength{\topmargin}{-40pt}
+\addtolength{\hoffset}{-0.3cm}
+\addtolength{\textheight}{4cm}
+
+\begin{document}
+\begin{center}
+
+\includegraphics[width=490pt]{header.png}\\[0.5cm]
+
+\textsc{\LARGE M\'etodos Computacionales 2}\\[0.1cm]
+%\large Nombre Profesora \\[0.5cm]
+
+\end{center}
+
+\large \noindent\textsc{Nombre del curso:}  M\'etodos Computacionales 2 % aqui %nombre del curso 
+  
+\noindent\textsc{C\'odigo del curso:}  %Aqui el codigo del %curso 
+
+\noindent\textsc{Unidad acad\'emica:} Departamento de F\'isica
+
+\noindent\textsc{Periodo acad\'emico:} %Aqui el periodo, %p.ej. 201510 
+
+\noindent\textsc{Horario:}
+%Aqui el horario, %p.ej. Ma y Ju, 10:00 a 11:20 
+
+\noindent\rule{\textwidth}{1pt}\\[-0.3cm]
+
+\normalsize \noindent\textsc{Nombre profesor magistral:}
+%Aqui nombre del profesor principal   
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:nn@uniandes.edu.co}{\nolinkurl{nn@uniandes.edu.co}}
+%Cambie address por su direccion de correo uniandes 
+
+\noindent\textsc{Horario y lugar de atenci\'on:} 
+% horario de atencion
+\\[-0.1cm]
+
+
+
+
+\normalsize \noindent\textsc{Nombre profesor Complementaria:}
+%Aqui nombre del profesor principal 
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:nn@uniandes.edu.co}{\nolinkurl{nn@uniandes.edu.co}}
+%Cambie address por su direccion de correo uniandes 
+
+\noindent\textsc{Horario de atenci\'on:} con cita previa. 
+\\[-0.1cm]
+%\href{mailto: jd.prada1760@uniandes.edu.co}{\nolinkurl{jd.prada1760@uniandes.edu.co}}
+
+%Cambie address por direccion de correo uniandes del profesor
+%complementario 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del profesor complementario, p.ej. Vi, 15:00 a
+%17:00, Oficina Ip102 
+%\\[-0.1cm]
+%Repetir esto en caso de varios profesores complementarios
+
+%\noindent\textsc{Nombre monitor(a):} %Aqui nombre del monitor si aplica
+
+%\noindent\textsc{Correo electr\'onico:}
+%\href{mailto:address@uniandes.edu.co}{\nolinkurl{address@uniandes.edu.co}}
+%%Cambie address por direccion de correo uniandes del monitor 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del monitor, p.ej. Vi, 15:00 a 17:00, Oficina Ip102 
+
+\noindent\rule{\textwidth}{1pt}\\[-0.1cm]
+
+\newcounter{mysection}
+\addtocounter{mysection}{1}
+
+\noindent\textbf{\large \Roman{mysection} \quad Introducci\'on}\\[-0.2cm]
+
+%Este espacio es para hacer una introduccion al curso, evidenciando la
+%propuesta metodologica. Debe ser clara y precisa. 
+
+\noindent\normalsize Los m\'etodos computacionales son un aspecto
+inseparable de cualquier \'area de trabajo en ciencia e ingenier\'ia.
+Esto se debe a la facilidad de acceso a 
+computadoras programables  y al aumento exponencial en su capacidad de
+procesamiento con la aparici\'on de los procesadores multi--n\'ucleo y las FPGA's.
+Esta diversificaci\'on de recursos para la realizaci\'on de c\'alculos presenta muchos desaf\'{\i}os para la investigaci\'on
+y, por ende, vemos la necesidad de democratizar el conocimiento para formar
+cient\'{\i}ficos vers\'atiles capaces de utilizar la tecnolog\'{\i}a
+de manera eficiente y as\'{\i} poder dar respuesta a las necesidades de la sociedad. 
+Este primer curso de la serie computacional de F\'{\i}sica busca 
+\\[0.1cm] 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Objetivos}\\[-0.2cm]
+
+%En este espacio se debe precisar el ente visor del curso y el
+%proposito ideal al finalizar el curso. 
+\noindent\normalsize El objetivo principal del curso es presentar
+algoritmos y t\'ecnicas b\'asicas para:
+
+\begin{itemize}
+\item analizar y describir datos con t\'ecnicas estad\'isticas basadas
+  en m\'etodos Monte Carlo, \\[-0.6cm]
+\item desarrollar esquemas reproducibles para el an\'alisis de datos cient\'ificos. \\[-0.6cm]
+\end{itemize} 
+\vspace*{0.5cm} 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Competencias a
+  desarrollar}\\[-0.2cm] 
+
+%En este espacio se describen las habilidades que el estudiante desarrollara en el transcurso del curso.
+
+\noindent\normalsize Al finalizar el curso, se espera que el
+estudiante est\'e en capacidad de: 
+
+\begin{itemize}
+\item implementar , \\[-0.6cm]   
+\item manejar ,\\[-0.6cm]  
+\item desarrollar .\\[-0.6cm]  
+\end{itemize}
+
+\vspace*{0.5cm} 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Contenido por
+  semanas}\\[-0.2cm]  
+
+%Se expone de forma ordenada toda la tematica a tratar del curso. Debe planearse para 15 semanas.
+
+\noindent\textbf{\textsc{Semana 1}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: C++. Introducción, sintaxis, compilar/ejecutar,
+variables, ciclos, If/while. \\[-0.6cm]
+\item Lecturas preparatorias: C++ Tutorial\\[-0.6cm]
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 2}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: C++. Funciones, arreglos, punteros, clases. Makefiles \\[-0.6cm]
+\item Lecturas preparatorias: C++ Tutorial. Videos de Sofware
+  Carpentry sobre Makefiles.\\[-0.6cm]  
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 3}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Transformadas de Fourier. Se\~nales y Filtros. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 10 (Fourier Analysis) del
+  libro de Landau.\\[-0.6cm] 
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 4}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Ecuaciones diferenciales ordinarias de primer y segundo orden. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 9 (ODEs) del libro de
+  Landau. Cap\'itulo 2 del libro de Hutchinson. \\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 5}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Ecuaciones diferenciales parciales de primer orden. Ecuación de advección. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 17 (PDEs) del libro de
+  Landau. Cap\'tulo 4 del libro de Hutchinson. \\[-0.6cm] 
+\end{itemize}
+
+
+\noindent\textbf{\textsc{Semana 6}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Ecuaciones diferenciales parciales se segundo orden. Ecuaciones parabólicas.   Ecuaci\'on de Difusi\'on. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 17 (PDEs) del libro de
+  Landau. Cap\'itulo 5 de Hutchinson. \\[-0.6cm] 
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 7}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Ecuaciones diferenciales parciales de segundo orden. Ecuaciones elípticas. Ecuación de Poisson. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 18 (PDEs) del libro de
+  Landau. Cap\'itulo 6 de Hutchinson. \\[-0.6cm] 
+\\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana 8}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: Ecuaciones diferenciales parciales de segundo orden. Ecuaciones hiperbólicas. Din\'amica de Fluidos. \\[-0.6cm]
+\item Lecturas preparatorias: Cap\'itulo 18 (PDEs) del libro de
+  Landau. Cap\'itulo 7 de Hutchinson. \\[-0.6cm] 
+\end{itemize}
+
+
+\vspace*{0.5cm} 
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad
+  Metodolog\'ia}\\[-0.2cm] 
+
+%Se describen las tecnicas y metodos para el desarrollo exitoso del curso.
+
+\noindent\normalsize 
+Magistral y Complementaria.
+
+
+\vspace*{0.5cm} 
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Criterios de
+  evaluaci\'on}\\[-0.2cm] 
+
+Todos los ex\'amenes, talleres y ejercicios son
+\textbf{individuales}.  
+Si en las entregas se detecta que el trabajo no fue
+individual (esto incluye colaboraci\'on con personas no inscritas en
+el curso, i.e. a trav\'es de ``monitor\'ias'') se llevar\'a el caso a
+comit\'e disciplinario y la nota del curso queda como Pendiente
+Disciplinario hasta que el comit\'e tome alguna decisi\'on. 
+
+Todas las entregas de talleres y ejercicios se har\'an a trav\'es de
+SICUA.  {\bf No se aceptar\'a ninguna tarea por fuera de esa
+  plataforma}, a menos que ocurra un una falla en los servidores de
+SICUA que afecte a {\bf todos} los estudiantes del curso.
+
+
+\vspace*{0.5cm} 
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad
+  Bibliograf\'ia}\\[-0.2cm] 
+
+%Indicar los libros y la documentacion guia.
+
+
+\noindent\normalsize Bibliograf\'ia principal:
+
+\begin{itemize}
+
+\item 
+\textit{A student's guide to numerical methods}, Ian H. Hutchinson, Cambridge University Press, 2015.
+
+\item
+\textit{Software Carpentry: Python Testing}
+\url{http://katyhuff.github.io/python-testing/}
+
+\item
+\textit{A survey of Computational Physics - Enlarged Python Book}
+. R. H. Landau, M. J. P\'aez, C. C. Bordeianu. WILEY. 2012.
+\url{https://psrc.aapt.org/items/detail.cfm?ID=11578}
+
+\item
+\textit{C++ programming for the absolute beginner.}
+ M. Lee \& D. Henkemans, Second Edition, Cengage Learning, 2009.
+
+\item
+\textit{The C programming language.}
+ B. Kernighan \& D. Ritchie, Second Edition, Prentice Hall.
+
+\item Software Carpentry: \url{http://software-carpentry.org/}
+\item C++ Tutorial: \url{https://www.tutorialspoint.com/cplusplus/}
+\end{itemize}
+
+
+\end{document}
